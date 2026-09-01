@@ -51,7 +51,7 @@ import {
   skillBubbles,
   skillIcons,
 } from "@/config/portfolio";
-import { cn } from "@/lib/utils";
+import { assetUrl, cn } from "@/lib/utils";
 import { CodeforcesIcon, FreeCodeCampIcon, LeetCodeIcon } from "./social";
 
 export function SectionHeading({
@@ -530,13 +530,13 @@ export function Experience() {
                     {item.logo ? (
                       item.logo.includes("thiranex") ? (
                         <img
-                          src={item.logo}
+                          src={assetUrl(item.logo)}
                           alt={`${item.org} Logo`}
                           className="h-5.5 w-auto shrink-0 max-w-[4.2rem] object-contain transition-transform duration-300 group-hover:scale-105"
                         />
                       ) : (
                         <img
-                          src={item.logo}
+                          src={assetUrl(item.logo)}
                           alt={`${item.org} Logo`}
                           className="h-7 w-7 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110"
                         />
@@ -842,7 +842,7 @@ export function Certifications() {
           className="relative aspect-[16/9] w-full overflow-hidden bg-muted/40 cursor-pointer"
         >
           <img
-            src={c.image}
+            src={assetUrl(c.image!)}
             alt={c.name}
             loading="lazy"
             className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-108"
@@ -1035,7 +1035,7 @@ export function Certifications() {
             {/* Image Preview */}
             <div className="p-4 max-h-[75vh] overflow-auto flex items-center justify-center bg-black/40">
               <img
-                src={selectedCert.image!}
+                src={assetUrl(selectedCert.image!)}
                 alt={selectedCert.name}
                 className="max-h-[70vh] w-auto rounded-lg object-contain shadow-2xl"
               />
@@ -1093,7 +1093,7 @@ export function Education() {
               <div className="flex items-start gap-4 min-w-0">
                 {primaryItem.logo ? (
                   <img
-                    src={primaryItem.logo}
+                    src={assetUrl(primaryItem.logo)}
                     alt={`${primaryItem.institution} Crest`}
                     className="h-11 w-auto shrink-0 max-w-[3.5rem] object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105"
                   />
@@ -1148,7 +1148,7 @@ export function Education() {
                     <div className="flex items-center gap-3 min-w-0">
                       {item.logo ? (
                         <img
-                          src={item.logo}
+                          src={assetUrl(item.logo)}
                           alt={`${item.institution} Seal`}
                           className="h-8 w-8 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110"
                         />
@@ -1259,7 +1259,7 @@ export function Resume() {
               {resumeUrl && (
                 <>
                   <a
-                    href={resumeUrl}
+                    href={assetUrl(resumeUrl)}
                     target="_blank"
                     rel="noreferrer noopener"
                     className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface/90 px-5 py-2.5 font-display text-sm font-medium text-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:border-primary/50"
@@ -1267,7 +1267,7 @@ export function Resume() {
                     Open PDF <ExternalLink className="h-4 w-4" />
                   </a>
                   <a
-                    href={resumeUrl}
+                    href={assetUrl(resumeUrl)}
                     download="Kumar_Shubham_Resume.pdf"
                     className="inline-flex items-center gap-2 rounded-xl border border-border bg-secondary/50 px-5 py-2.5 font-display text-sm font-medium text-muted-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:text-foreground"
                   >
@@ -1287,7 +1287,7 @@ export function Resume() {
             className="group relative aspect-[1/1.4] w-44 shrink-0 cursor-pointer overflow-hidden rounded-xl border border-border/80 bg-black/60 shadow-2xl transition-all duration-300 hover:scale-105 hover:border-primary/60 self-center justify-self-center lg:justify-self-end"
           >
             <img
-              src="/resume-preview.png"
+              src={assetUrl("/resume-preview.png")}
               alt="Kumar Shubham Resume Document Preview"
               className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
             />
@@ -1323,7 +1323,7 @@ export function Resume() {
               <div className="flex items-center gap-2">
                 {resumeUrl && (
                   <a
-                    href={resumeUrl}
+                    href={assetUrl(resumeUrl)}
                     download="Kumar_Shubham_Resume.pdf"
                     className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-secondary/50 px-3 py-1.5 font-mono text-xs font-medium text-foreground transition-colors hover:bg-secondary"
                   >
@@ -1343,7 +1343,7 @@ export function Resume() {
             {/* PDF View / Image Preview Box */}
             <div className="flex items-center justify-center bg-black/60 p-4 max-h-[80vh] overflow-auto">
               <iframe
-                src="/resume.pdf"
+                src={assetUrl("/resume.pdf")}
                 title="Kumar Shubham Resume PDF"
                 className="h-[75vh] w-full rounded-lg border border-border/60 bg-white"
               />

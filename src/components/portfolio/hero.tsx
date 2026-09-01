@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowRight, Download, Linkedin, Trophy } from "lucide-react";
 import { links, profile, resumeUrl } from "@/config/portfolio";
 import { socials } from "./social";
+import { assetUrl } from "@/lib/utils";
 
 const stats = [
   { v: profile.cgpa, l: ["CGPA", "B.TECH CSE"] },
@@ -43,7 +44,7 @@ export function Hero() {
         {/* portrait — anchored bottom right */}
         <div className="pointer-events-none absolute bottom-0 right-0 z-[2] h-[74%] w-[72%] sm:h-[84%] sm:w-[52%] lg:right-[8%] lg:h-[90%] lg:w-[40%]">
           <img
-            src="/hero-figure.png"
+            src={assetUrl("/hero-figure.png")}
             alt={`Portrait of ${profile.name}, full-stack developer`}
             width={705}
             height={1519}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FileText, Menu, Moon, Sun, X } from "lucide-react";
 import { navSections, profile, resumeUrl } from "@/config/portfolio";
-import { cn } from "@/lib/utils";
+import { assetUrl, cn } from "@/lib/utils";
 
 function ScrollProgress() {
   const [pct, setPct] = useState(0);
@@ -96,7 +96,7 @@ export function Navbar() {
       >
         <a href="#home" className="flex min-w-0 items-center gap-2.5">
           <img
-            src="/avatar.jpg"
+            src={assetUrl("/avatar.jpg")}
             alt="Kumar Shubham"
             width={36}
             height={36}
