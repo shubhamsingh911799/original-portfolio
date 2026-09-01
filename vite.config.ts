@@ -5,7 +5,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "./",
+  base: process.env.NODE_ENV === "production" ? "/original-portfolio/" : "/",
   plugins: [
     tsconfigPaths(),
     tanstackStart({
