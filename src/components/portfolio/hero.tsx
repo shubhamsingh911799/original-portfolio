@@ -111,7 +111,7 @@ export function Hero() {
               <Linkedin className="h-4 w-4" />
             </a>
             <a
-              href={resumeUrl ?? "#resume"}
+              href={resumeUrl ? assetUrl(resumeUrl) : "#resume"}
               {...(resumeUrl ? { target: "_blank", rel: "noreferrer noopener" } : {})}
               className="inline-flex items-center gap-3 border border-border bg-background/60 px-6 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-foreground backdrop-blur transition-colors hover:border-primary hover:text-primary"
             >

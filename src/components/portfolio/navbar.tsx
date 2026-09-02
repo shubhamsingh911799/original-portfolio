@@ -134,7 +134,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <a
-            href={resumeUrl ?? "#resume"}
+            href={resumeUrl ? assetUrl(resumeUrl) : "#resume"}
             {...(resumeUrl ? { target: "_blank", rel: "noreferrer noopener" } : {})}
             className="hidden items-center gap-2 rounded-lg bg-foreground px-3.5 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90 sm:inline-flex"
           >
@@ -171,8 +171,9 @@ export function Navbar() {
             ))}
             <li className="pt-2">
               <a
-                href={resumeUrl ?? "#resume"}
+                href={resumeUrl ? assetUrl(resumeUrl) : "#resume"}
                 onClick={() => setOpen(false)}
+                {...(resumeUrl ? { target: "_blank", rel: "noreferrer noopener" } : {})}
                 className="flex items-center justify-center gap-2 rounded-lg bg-foreground px-3.5 py-2.5 text-sm font-medium text-background"
               >
                 <FileText className="h-4 w-4" /> Resume
