@@ -32,7 +32,7 @@ export function Hero() {
         {/* oversized backdrop word */}
         <span
           aria-hidden="true"
-          className="display-mega pointer-events-none absolute inset-x-0 top-2 z-0 max-w-full select-none overflow-hidden text-ellipsis text-[15vw] leading-[0.74] opacity-90 sm:top-4 sm:text-[22vw]"
+          className="display-mega pointer-events-none absolute inset-x-0 top-2 z-0 hidden select-none overflow-hidden text-ellipsis opacity-90 sm:block sm:top-4 sm:text-[22vw] sm:leading-[0.74]"
         >
           Portfolio
         </span>
