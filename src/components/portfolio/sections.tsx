@@ -590,7 +590,7 @@ export function Experience() {
                         className="group/img relative aspect-[16/10] w-14 shrink-0 cursor-pointer overflow-hidden rounded-lg border border-border/80 bg-black/40 shadow-sm"
                       >
                         <img
-                          src={item.image}
+                          src={assetUrl(item.image)}
                           alt={`${item.title} Proof`}
                           className="h-full w-full object-cover object-top transition-transform duration-300 group-hover/img:scale-110"
                         />
@@ -702,7 +702,7 @@ export function Experience() {
             {/* Image Preview */}
             <div className="flex items-center justify-center bg-black/40 p-4 max-h-[75vh] overflow-auto">
               <img
-                src={selectedImage.image}
+                src={assetUrl(selectedImage.image)}
                 alt={selectedImage.name}
                 className="max-h-[70vh] w-auto rounded-lg object-contain shadow-2xl"
               />
