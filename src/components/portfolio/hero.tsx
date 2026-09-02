@@ -14,12 +14,12 @@ export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-background">
       {/* top meta bar */}
-      <div className="relative z-20 flex items-start justify-between gap-4 border-b border-border/60 px-5 pb-3 pt-20 sm:px-8 lg:pt-24">
+      <div className="relative z-20 flex flex-wrap items-center justify-between gap-2 border-b border-border/60 px-4 pb-3 pt-18 sm:px-8 lg:pt-24">
         <div>
           <p className="eyebrow text-primary">Web Developer</p>
-          <p className="eyebrow mt-1 text-muted-foreground">Full-Stack Developer</p>
+          <p className="eyebrow mt-0.5 text-muted-foreground">Full-Stack Developer</p>
         </div>
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2">
           <p className="eyebrow text-foreground/80">Open to Internships</p>
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/70" />
@@ -28,11 +28,11 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative min-h-[720px] lg:min-h-[860px]">
+      <div className="relative min-h-[640px] sm:min-h-[720px] lg:min-h-[860px]">
         {/* oversized backdrop word */}
         <span
           aria-hidden="true"
-          className="display-mega pointer-events-none absolute inset-x-0 top-2 z-0 select-none whitespace-nowrap text-[22vw] leading-[0.74] opacity-90 sm:top-4"
+          className="display-mega pointer-events-none absolute inset-x-0 top-2 z-0 max-w-full select-none overflow-hidden text-ellipsis text-[15vw] leading-[0.74] opacity-90 sm:top-4 sm:text-[22vw]"
         >
           Portfolio
         </span>
@@ -42,14 +42,14 @@ export function Hero() {
         />
 
         {/* portrait — anchored bottom right */}
-        <div className="pointer-events-none absolute bottom-0 right-0 z-[2] h-[74%] w-[72%] sm:h-[84%] sm:w-[52%] lg:right-[8%] lg:h-[90%] lg:w-[40%]">
+        <div className="pointer-events-none absolute bottom-0 right-0 z-0 h-[45%] w-[60%] sm:z-[2] sm:h-[84%] sm:w-[52%] lg:right-[8%] lg:h-[90%] lg:w-[40%]">
           <img
             src={assetUrl("/hero-figure.png")}
             alt={`Portrait of ${profile.name}, full-stack developer`}
             width={705}
             height={1519}
             loading="eager"
-            className="h-full w-full select-none object-contain object-bottom opacity-90 drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] transition-all duration-300 sm:opacity-100"
+            className="h-full w-full select-none object-contain object-bottom opacity-30 drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] transition-all duration-300 sm:opacity-100"
           />
           <div
             aria-hidden="true"
@@ -73,30 +73,30 @@ export function Hero() {
         </a>
 
         {/* content */}
-        <div className="relative z-10 px-5 pb-16 pt-[19vw] sm:px-8 sm:pt-[15vw] lg:max-w-[48%] lg:pb-24 lg:pt-[12vw]">
-          <p className="reveal font-display text-3xl italic text-primary sm:text-4xl">
+        <div className="relative z-10 px-4 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-[15vw] lg:max-w-[48%] lg:pb-24 lg:pt-[12vw]">
+          <p className="reveal font-display text-2xl italic text-primary sm:text-4xl">
             Hello, I&apos;m
           </p>
-          <h1 className="reveal mt-1 font-display text-[13vw] font-bold uppercase leading-[0.86] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="reveal mt-1 font-display text-4xl font-bold uppercase leading-[0.9] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
             Kumar
             <br />
             Shubham
           </h1>
-          <p className="reveal mt-5 text-lg font-semibold uppercase tracking-[0.08em] text-primary sm:text-2xl">
+          <p className="reveal mt-4 text-base font-semibold uppercase tracking-[0.08em] text-primary sm:text-2xl">
             Full-Stack Developer
           </p>
-          <p className="reveal mt-1 text-sm uppercase tracking-[0.1em] text-muted-foreground sm:text-lg">
+          <p className="reveal mt-1 text-xs uppercase tracking-[0.1em] text-muted-foreground sm:text-lg">
             CSE Student | Problem Solver
           </p>
 
-          <p className="reveal mt-6 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <p className="reveal mt-5 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
             {profile.intro}
           </p>
 
-          <div className="reveal mt-8 flex flex-wrap items-center gap-3">
+          <div className="reveal mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <a
               href="#projects"
-              className="group inline-flex items-center gap-3 border border-primary bg-primary px-6 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-transparent hover:text-primary"
+              className="group inline-flex w-full items-center justify-center gap-3 border border-primary bg-primary px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-transparent hover:text-primary sm:w-auto sm:px-6 sm:py-4"
             >
               View My Work
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -105,7 +105,7 @@ export function Hero() {
               href={links.linkedin}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center gap-3 border border-primary/70 bg-primary/10 px-6 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-primary backdrop-blur transition-all hover:bg-primary hover:text-primary-foreground"
+              className="inline-flex w-full items-center justify-center gap-3 border border-primary/70 bg-primary/10 px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary backdrop-blur transition-all hover:bg-primary hover:text-primary-foreground sm:w-auto sm:px-6 sm:py-4"
             >
               Connect on LinkedIn
               <Linkedin className="h-4 w-4" />
@@ -113,7 +113,7 @@ export function Hero() {
             <a
               href={resumeUrl ? assetUrl(resumeUrl) : "#resume"}
               {...(resumeUrl ? { target: "_blank", rel: "noreferrer noopener" } : {})}
-              className="inline-flex items-center gap-3 border border-border bg-background/60 px-6 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-foreground backdrop-blur transition-colors hover:border-primary hover:text-primary"
+              className="inline-flex w-full items-center justify-center gap-3 border border-border bg-background/60 px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-foreground backdrop-blur transition-colors hover:border-primary hover:text-primary sm:w-auto sm:px-6 sm:py-4"
             >
               Download Resume
               <Download className="h-4 w-4" />
@@ -121,25 +121,25 @@ export function Hero() {
           </div>
 
           {/* socials */}
-          <div className="reveal mt-10">
+          <div className="reveal mt-8">
             <div className="flex items-center gap-4">
               <p className="eyebrow text-muted-foreground">Let&apos;s Connect</p>
               <span className="h-px w-12 bg-primary" />
             </div>
-            <ul className="mt-4 flex flex-wrap items-start gap-5">
+            <ul className="mt-4 flex flex-wrap items-start gap-4 sm:gap-5">
               {socials.map(({ key, label, href, Icon }) => (
-                <li key={key} className="flex flex-col items-center gap-2">
+                <li key={key} className="flex flex-col items-center gap-1.5">
                   <a
                     href={href}
                     aria-label={label}
                     {...(href.startsWith("mailto:")
                       ? {}
                       : { target: "_blank", rel: "noreferrer noopener" })}
-                    className="grid h-12 w-12 place-items-center rounded-full border border-primary/70 text-foreground transition-all hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground"
+                    className="grid h-11 w-11 place-items-center rounded-full border border-primary/70 text-foreground transition-all hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground sm:h-12 sm:w-12"
                   >
-                    <Icon className="h-5 w-5" />
+                    <Icon className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
                   </a>
-                  <span className="text-[0.68rem] text-muted-foreground">{label}</span>
+                  <span className="text-[0.65rem] text-muted-foreground sm:text-[0.68rem]">{label}</span>
                 </li>
               ))}
             </ul>
@@ -149,13 +149,13 @@ export function Hero() {
 
       {/* stats strip */}
       <div className="relative z-20 border-y border-border bg-background/80 backdrop-blur">
-        <dl className="mx-auto grid max-w-[92rem] grid-cols-2 divide-border px-6 sm:grid-cols-4 sm:divide-x sm:px-10">
+        <dl className="mx-auto grid max-w-[92rem] grid-cols-2 divide-y divide-border px-4 sm:grid-cols-4 sm:divide-y-0 sm:divide-x sm:px-10">
           {stats.map((s) => (
-            <div key={s.l[0]} className="px-4 py-8 text-center">
-              <dd className="flex h-10 items-center justify-center font-display text-4xl font-bold text-primary">
-                {s.icon ? <Trophy className="h-8 w-8" /> : <>{s.v}</>}
+            <div key={s.l[0]} className="px-3 py-6 text-center sm:px-4 sm:py-8">
+              <dd className="flex h-9 items-center justify-center font-display text-3xl font-bold text-primary sm:h-10 sm:text-4xl">
+                {s.icon ? <Trophy className="h-7 w-7 sm:h-8 sm:w-8" /> : <>{s.v}</>}
               </dd>
-              <dt className="mt-2 text-xs uppercase leading-4 tracking-[0.12em] text-muted-foreground">
+              <dt className="mt-1.5 text-[0.68rem] uppercase leading-3.5 tracking-[0.1em] text-muted-foreground sm:mt-2 sm:text-xs sm:leading-4 sm:tracking-[0.12em]">
                 {s.l[0]}
                 <br />
                 {s.l[1]}

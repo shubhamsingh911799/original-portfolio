@@ -348,7 +348,7 @@ function SkillCard({ group, index }: { group: (typeof skillBubbles)[number]; ind
       }}
       onMouseEnter={() => setActive(true)}
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-b from-surface/90 via-surface/75 to-surface/90 p-6 backdrop-blur-xl transition-all duration-300 shadow-lg hover:shadow-2xl",
+        "group relative flex flex-col overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-b from-surface/90 via-surface/75 to-surface/90 p-4.5 sm:p-6 backdrop-blur-xl transition-all duration-300 shadow-lg hover:shadow-2xl",
         config.borderColor,
       )}
       style={{
@@ -567,7 +567,7 @@ export function Experience() {
 
                 {/* Inline Certificate Proof */}
                 {item.image && (
-                  <div className="mt-3.5 flex items-center justify-between rounded-xl border border-primary/20 bg-primary/5 p-2.5 backdrop-blur-sm">
+                  <div className="mt-3.5 flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between rounded-xl border border-primary/20 bg-primary/5 p-2.5 backdrop-blur-sm">
                     <div className="flex items-center gap-2.5 min-w-0">
                       <div
                         role="button"
@@ -633,7 +633,7 @@ export function Experience() {
                           credentialId: item.credentialId,
                         })
                       }
-                      className="inline-flex shrink-0 items-center gap-1 rounded-lg border border-primary/40 bg-primary/10 px-3 py-1.5 font-mono text-[0.68rem] font-semibold text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-md"
+                      className="inline-flex shrink-0 items-center justify-center gap-1 rounded-lg border border-primary/40 bg-primary/10 px-3 py-1.5 font-mono text-[0.68rem] font-semibold text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-md w-full sm:w-auto"
                     >
                       <Eye className="h-3 w-3" /> View Proof
                     </button>
@@ -945,7 +945,7 @@ export function Certifications() {
         />
 
         {/* View Mode & Animation Controls */}
-        <div className="flex items-center gap-2 self-start sm:self-end shrink-0">
+        <div className="flex max-w-full items-center gap-2 self-start sm:self-end shrink-0">
           {viewMode === "marquee" && (
             <button
               onClick={() => setIsPaused(!isPaused)}
@@ -1012,11 +1012,11 @@ export function Certifications() {
           role="dialog"
           aria-modal="true"
           onClick={() => setSelectedCert(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-md transition-opacity"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-3 sm:p-4 backdrop-blur-md transition-opacity"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative max-h-[90vh] max-w-4xl w-full overflow-hidden rounded-2xl border border-border/80 bg-background shadow-2xl"
+            className="relative max-h-[90vh] w-[95vw] max-w-4xl overflow-hidden rounded-2xl border border-border/80 bg-background shadow-2xl"
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-border px-6 py-4">
@@ -1247,11 +1247,11 @@ export function Resume() {
             </div>
 
             {/* Action Buttons */}
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center">
               <button
                 type="button"
                 onClick={() => setIsPreviewOpen(true)}
-                className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 font-display text-sm font-semibold text-primary-foreground shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-primary/90"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-2.5 font-display text-sm font-semibold text-primary-foreground shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
               >
                 <Eye className="h-4 w-4" /> Preview Resume
               </button>
@@ -1262,14 +1262,14 @@ export function Resume() {
                     href={assetUrl(resumeUrl)}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface/90 px-5 py-2.5 font-display text-sm font-medium text-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:border-primary/50"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-surface/90 px-5 py-2.5 font-display text-sm font-medium text-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:border-primary/50 sm:w-auto"
                   >
                     Open PDF <ExternalLink className="h-4 w-4" />
                   </a>
                   <a
                     href={assetUrl(resumeUrl)}
                     download="Kumar_Shubham_Resume.pdf"
-                    className="inline-flex items-center gap-2 rounded-xl border border-border bg-secondary/50 px-5 py-2.5 font-display text-sm font-medium text-muted-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:text-foreground"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-secondary/50 px-5 py-2.5 font-display text-sm font-medium text-muted-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:text-foreground sm:w-auto"
                   >
                     <Download className="h-4 w-4" /> Download PDF
                   </a>
@@ -1305,18 +1305,18 @@ export function Resume() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-md animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-3 sm:p-4 backdrop-blur-md animate-in fade-in duration-200"
           onClick={() => setIsPreviewOpen(false)}
         >
           <div
-            className="relative w-full max-w-4xl overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl"
+            className="relative w-[95vw] max-w-4xl overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-border px-6 py-4">
+            <div className="flex items-center justify-between border-b border-border px-4 py-3 sm:px-6 sm:py-4">
               <div>
-                <h3 className="font-display text-lg font-bold">Kumar Shubham — Resume</h3>
-                <p className="font-mono text-xs text-muted-foreground">
+                <h3 className="font-display text-base sm:text-lg font-bold">Kumar Shubham — Resume</h3>
+                <p className="font-mono text-[0.7rem] sm:text-xs text-muted-foreground">
                   Formal Curriculum Vitae (B.Tech CSE & Minor AI)
                 </p>
               </div>
@@ -1325,9 +1325,9 @@ export function Resume() {
                   <a
                     href={assetUrl(resumeUrl)}
                     download="Kumar_Shubham_Resume.pdf"
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-secondary/50 px-3 py-1.5 font-mono text-xs font-medium text-foreground transition-colors hover:bg-secondary"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-secondary/50 px-2.5 py-1.5 font-mono text-xs font-medium text-foreground transition-colors hover:bg-secondary"
                   >
-                    <Download className="h-3.5 w-3.5" /> Download
+                    <Download className="h-3.5 w-3.5" /> <span className="hidden sm:inline">Download</span>
                   </a>
                 )}
                 <button
@@ -1341,11 +1341,11 @@ export function Resume() {
             </div>
 
             {/* PDF View / Image Preview Box */}
-            <div className="flex items-center justify-center bg-black/60 p-4 max-h-[80vh] overflow-auto">
+            <div className="flex items-center justify-center bg-black/60 p-2 sm:p-4 max-h-[80vh] overflow-auto">
               <iframe
                 src={assetUrl("/resume.pdf")}
                 title="Kumar Shubham Resume PDF"
-                className="h-[75vh] w-full rounded-lg border border-border/60 bg-white"
+                className="h-[65vh] sm:h-[75vh] w-full rounded-lg border border-border/60 bg-white"
               />
             </div>
           </div>

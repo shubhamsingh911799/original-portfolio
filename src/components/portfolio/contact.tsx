@@ -79,7 +79,7 @@ function ContactForm() {
   };
 
   return (
-    <form className="card-premium space-y-4 p-7" onSubmit={handleSubmit}>
+    <form className="card-premium space-y-4 p-4.5 sm:p-7" onSubmit={handleSubmit}>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block text-sm">
           <span className="font-medium text-muted-foreground">Name</span>
@@ -88,7 +88,7 @@ function ContactForm() {
             name="name"
             autoComplete="name"
             placeholder="Your name"
-            className="mt-2 w-full rounded-xl border border-input bg-background px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-primary"
+            className="mt-2 w-full rounded-xl border border-input bg-background px-3.5 py-2.5 text-base sm:text-sm outline-none transition-colors focus:border-primary"
           />
         </label>
         <label className="block text-sm">
@@ -99,7 +99,7 @@ function ContactForm() {
             name="email"
             autoComplete="email"
             placeholder="your.email@example.com"
-            className="mt-2 w-full rounded-xl border border-input bg-background px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-primary"
+            className="mt-2 w-full rounded-xl border border-input bg-background px-3.5 py-2.5 text-base sm:text-sm outline-none transition-colors focus:border-primary"
           />
         </label>
       </div>
@@ -109,7 +109,7 @@ function ContactForm() {
           required
           name="subject"
           placeholder="Project inquiry / Internship / Collaboration"
-          className="mt-2 w-full rounded-xl border border-input bg-background px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-primary"
+          className="mt-2 w-full rounded-xl border border-input bg-background px-3.5 py-2.5 text-base sm:text-sm outline-none transition-colors focus:border-primary"
         />
       </label>
       <label className="block text-sm">
@@ -119,14 +119,14 @@ function ContactForm() {
           name="message"
           rows={5}
           placeholder="Write your message here..."
-          className="mt-2 w-full resize-y rounded-xl border border-input bg-background px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-primary"
+          className="mt-2 w-full resize-y rounded-xl border border-input bg-background px-3.5 py-2.5 text-base sm:text-sm outline-none transition-colors focus:border-primary"
         />
       </label>
       <div className="flex items-center justify-between gap-3 pt-2">
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-accent2 px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 disabled:opacity-50"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-accent2 px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 disabled:opacity-50 sm:w-auto"
         >
           {submitting ? (
             <>
@@ -143,7 +143,7 @@ function ContactForm() {
           )}
         </button>
       </div>
-      <p className="text-xs text-muted-foreground flex items-center gap-1.5 pt-1">
+      <p className="text-xs text-muted-foreground flex flex-wrap items-center gap-1.5 pt-1">
         <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
         <span>
           Connected to <code className="font-mono text-foreground">{profile.email}</code> — messages are delivered directly.
@@ -164,7 +164,7 @@ export function Contact() {
 
       <div className="mt-10 grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="space-y-5">
-          <div className="card-premium p-7">
+          <div className="card-premium p-4.5 sm:p-7">
             <p className="text-xs uppercase tracking-wider text-muted-foreground">Email</p>
             <div className="mt-3 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
               <a
@@ -177,13 +177,13 @@ export function Contact() {
             </div>
             <a
               href={links.email}
-              className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-accent2 px-5 py-2.5 text-sm font-medium text-primary-foreground"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-accent2 px-5 py-2.5 text-sm font-medium text-primary-foreground sm:w-auto"
             >
               <Mail className="h-4 w-4" /> Email Me
             </a>
           </div>
 
-          <div className="card-premium p-7">
+          <div className="card-premium p-4.5 sm:p-7">
             <p className="text-xs uppercase tracking-wider text-muted-foreground">Elsewhere</p>
             <ul className="mt-4 space-y-2">
               {socials
@@ -214,14 +214,14 @@ export function Contact() {
 export function Footer() {
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto grid max-w-[92rem] gap-6 px-6 py-10 sm:flex sm:items-center sm:justify-between sm:px-10">
+      <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-8 sm:flex sm:items-center sm:justify-between sm:px-10 sm:py-10">
         <div className="min-w-0">
           <p className="font-display text-base font-semibold">{profile.name}</p>
           <p className="mt-1 text-sm text-muted-foreground">Full-Stack Developer | CSE Student</p>
         </div>
         <SocialRow />
       </div>
-      <div className="mx-auto max-w-[92rem] px-6 pb-8 sm:px-10">
+      <div className="mx-auto max-w-[92rem] px-4 pb-8 sm:px-10">
         <p className="border-t border-border pt-6 text-xs text-muted-foreground">
           © 2026 {profile.name}. All rights reserved.
         </p>

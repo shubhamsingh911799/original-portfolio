@@ -92,7 +92,7 @@ export function Navbar() {
     >
       <nav
         aria-label="Main navigation"
-        className="mx-auto grid max-w-[92rem] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 py-3.5 sm:px-10 lg:flex lg:justify-between"
+        className="mx-auto grid max-w-[92rem] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-10 lg:flex lg:justify-between"
       >
         <a href="#home" className="flex min-w-0 items-center gap-2.5">
           <img
@@ -153,23 +153,23 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div className="glass border-t border-border lg:hidden">
-          <ul className="mx-auto max-w-[92rem] px-6 py-3 sm:px-10">
+        <div className="glass max-h-[80vh] overflow-y-auto border-t border-border shadow-xl lg:hidden">
+          <ul className="mx-auto max-w-[92rem] px-4 py-3 sm:px-10">
             {navSections.map(({ id, label }) => (
               <li key={id}>
                 <a
                   href={`#${id}`}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "block rounded-lg px-2 py-2.5 text-sm",
-                    active === id ? "text-primary" : "text-muted-foreground",
+                    "block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors hover:bg-secondary/60",
+                    active === id ? "bg-primary/10 text-primary font-semibold" : "text-muted-foreground hover:text-foreground",
                   )}
                 >
                   {label}
                 </a>
               </li>
             ))}
-            <li className="pt-2">
+            <li className="pt-3">
               <a
                 href={resumeUrl ? assetUrl(resumeUrl) : "#resume"}
                 onClick={() => setOpen(false)}

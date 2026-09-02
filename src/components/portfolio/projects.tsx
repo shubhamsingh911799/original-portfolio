@@ -36,7 +36,7 @@ export function Projects() {
     <article
       key={indexKey}
       className={cn(
-        "group flex flex-col justify-between overflow-hidden rounded-2xl border border-border/80 bg-surface/95 p-6 transition-all duration-300 hover:border-primary/60 hover:shadow-xl",
+        "group flex flex-col justify-between overflow-hidden rounded-2xl border border-border/80 bg-surface/95 p-4.5 sm:p-6 transition-all duration-300 hover:border-primary/60 hover:shadow-xl",
         viewMode === "marquee" ? "project-card-3d shrink-0" : "card-premium",
       )}
     >
@@ -167,17 +167,17 @@ export function Projects() {
           description="Interactive 3D showcase of my full-stack web applications, AI/ML platforms, and product designs."
         />
 
-        <div className="flex flex-wrap items-center gap-3 self-start sm:self-end shrink-0">
+        <div className="flex max-w-full flex-col gap-3 sm:flex-row sm:items-center self-start sm:self-end shrink-0">
           {/* Category Filter Pills */}
-          <ul className="flex flex-wrap gap-1.5">
+          <ul className="flex max-w-full overflow-x-auto no-scrollbar gap-1.5 pb-1 sm:pb-0 shrink-0">
             {filters.map((f) => (
-              <li key={f}>
+              <li key={f} className="shrink-0">
                 <button
                   type="button"
                   onClick={() => setFilter(f)}
                   aria-pressed={filter === f}
                   className={cn(
-                    "rounded-xl border px-3 py-1.5 font-mono text-xs transition-colors",
+                    "rounded-xl border px-3 py-1.5 font-mono text-xs transition-colors whitespace-nowrap",
                     filter === f
                       ? "border-primary/60 bg-primary/10 text-primary font-medium"
                       : "border-border text-muted-foreground hover:text-foreground",
